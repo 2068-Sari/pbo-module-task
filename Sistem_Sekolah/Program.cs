@@ -5,7 +5,6 @@ namespace SistemSekolah
 {
     public class Orang
     {
-        // Enkapsulasi dengan standar naming convention C#
         private string nama = " ";
         private int umur;
 
@@ -23,7 +22,7 @@ namespace SistemSekolah
                 if (value >= 0)
                     umur = value;
                 else
-                    umur = 0;// Validasi sederhana: umur tidak boleh negatif
+                    umur = 0;
             }
         }
 
@@ -33,7 +32,6 @@ namespace SistemSekolah
             Umur = umur;
         }
 
-        // Virtual agar bisa di-override (Polymorphism)
         public virtual void Aktivitas()
         {
             Console.WriteLine($"{Nama} sedang melakukan aktivitas umum.");
@@ -46,9 +44,6 @@ namespace SistemSekolah
         }
     }
 
-    // ==========================================
-    // 2. KELAS TURUNAN LEVEL 1 (Siswa & Guru)
-    // ==========================================
     public class Siswa : Orang
     {
         private string kelas = " ";
@@ -149,7 +144,7 @@ namespace SistemSekolah
 
     public class GuruMatematika : Guru
     {
-        // Constructor otomatis mengisi mataPelajaran dengan "Matematika"
+        // Constructor akan mengisi mataPelajaran dengan "Matematika"
         public GuruMatematika(string nama, int umur) : base(nama, umur, "Matematika") { }
 
         public void MengajarHitung()
@@ -165,7 +160,6 @@ namespace SistemSekolah
 
     public class GuruBahasa : Guru
     {
-        // Constructor otomatis mengisi mataPelajaran dengan "Bahasa"
         public GuruBahasa(string nama, int umur) : base(nama, umur, "Bahasa") { }
 
         public void MengajarBahasa()
@@ -178,10 +172,6 @@ namespace SistemSekolah
             Console.WriteLine($"{Nama} sedang melakukan aktivitas sebagai Guru Bahasa.");
         }
     }
-
-    // ==========================================
-    // 4. KELAS SEKOLAH (Komposisi/Agregasi)
-    // ==========================================
     public class Sekolah
     {
         private List<Orang> _daftarOrang;
@@ -209,7 +199,7 @@ namespace SistemSekolah
             }
         }
 
-        // Method tambahan untuk mengambil list (untuk keperluan looping di Main)
+        // mengambil list 
         public List<Orang> GetDaftarOrang()
         {
             return _daftarOrang;
@@ -260,7 +250,6 @@ namespace SistemSekolah
             louis.UjianNasional();
             Console.WriteLine();
 
-            // --- SOAL 5 ---
             Console.WriteLine();
             Orang contohOrang = new SiswaSD("Siswa Diyan", 9, "3 SD");
             contohOrang.Aktivitas();
@@ -271,13 +260,12 @@ namespace SistemSekolah
 
             // e. Demonstrasikan polymorphism
             Console.WriteLine();
-            // Meski di-loop sebagai tipe 'Orang', sistem akan memanggil aktivitas sesuai wujud aslinya
             foreach (Orang orang in sekolahMaju.GetDaftarOrang())
             {
                 orang.Aktivitas();
             }
 
-            // f. Panggil method khusus
+            // f. method khusus
             Console.WriteLine();
             mikha.Main();
             louis.UjianNasional();
