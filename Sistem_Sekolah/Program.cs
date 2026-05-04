@@ -259,7 +259,6 @@ namespace SistemSekolah
             pakMinho.MengajarHitung();  // Hanya dimiliki GuruMatematika
             buHellen.MengajarBahasa();   // Hanya dimiliki GuruBahasa
 
-            //Console.WriteLine("\nProgram Selesai.");
             Console.ReadLine();
         }
     }
