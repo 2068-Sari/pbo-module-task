@@ -240,6 +240,31 @@ namespace SistemSekolah
             sekolahMaju.TambahOrang(louis);
             sekolahMaju.TambahOrang(pakMinho);
             sekolahMaju.TambahOrang(buHellen);
+            Console.Clear();
+
+            Console.WriteLine();
+            pakMinho.Aktivitas(); // Objek Guru
+            louis.Aktivitas();    // Objek Siswa
+            Console.WriteLine();
+
+            Console.WriteLine();
+            pakMinho.MengajarHitung();
+            Console.WriteLine();
+
+            Console.WriteLine();
+            pakMinho.InfoOrang();
+            Console.WriteLine();
+
+
+            Console.WriteLine();
+            louis.UjianNasional();
+            Console.WriteLine();
+
+            // --- SOAL 5 ---
+            Console.WriteLine();
+            Orang contohOrang = new SiswaSD("Siswa Diyan", 9, "3 SD");
+            contohOrang.Aktivitas();
+            Console.WriteLine();
 
             // d. Tampilkan semua data
             sekolahMaju.DaftarOrang();
@@ -254,11 +279,12 @@ namespace SistemSekolah
 
             // f. Panggil method khusus
             Console.WriteLine();
-            mikha.Main();              
-            louis.UjianNasional();      
+            mikha.Main();
+            louis.UjianNasional();
             pakMinho.MengajarHitung();  // Hanya dimiliki GuruMatematika
             buHellen.MengajarBahasa();   // Hanya dimiliki GuruBahasa
 
+            Console.WriteLine("Program selesai");
             Console.ReadLine();
         }
     }
