@@ -216,7 +216,7 @@ namespace SistemSekolah
         }
     }
 
-   
+  
 
 
     class Program
@@ -254,12 +254,12 @@ namespace SistemSekolah
 
             // f. Panggil method khusus
             Console.WriteLine();
-            mikha.Main();               // Hanya dimiliki SiswaSD
-            louis.UjianNasional();      // Hanya dimiliki SiswaSMA
+            mikha.Main();              
+            louis.UjianNasional();      
             pakMinho.MengajarHitung();  // Hanya dimiliki GuruMatematika
             buHellen.MengajarBahasa();   // Hanya dimiliki GuruBahasa
 
-            Console.WriteLine("\nProgram Selesai.");
+            //Console.WriteLine("\nProgram Selesai.");
             Console.ReadLine();
         }
     }
